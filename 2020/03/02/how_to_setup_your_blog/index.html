@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="description" content="">
+  <meta name="author" content="Cynic.Ink">
+  <meta name="keywords" content="ACGN,科技,学习,日语">
+  <title>如何建立你的Blog ~ Cynic &#39;s Blog</title>
+
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.bootcss.com/mdbootstrap/4.13.0/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.bootcss.com/github-markdown-css/4.0.0/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tranquil-heart.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Cynic 's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">友链</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" false
+         style="background: url('/img/how_to_setup_your_blog/bar.png')no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  2020 三月 2日，星期一
+                </p>
+                <p class="mt-3">
+                  <i class="fas fa-angle-double-up" aria-hidden="true"></i>&nbsp;
+                  2020 三月 3日，星期二
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    1.9k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      7 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <blockquote>
+<p>本教程是基于Hexo,使用Fluid主题,托管于Github的博客教程</p>
+</blockquote>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><p>在一切开始之前,你需要:  </p>
+<ul>
+<li>电脑 (或<code>Android</code>手机) </li>
+<li>Node.js</li>
+<li>git</li>
+<li>Hexo  </li>
+<li>Github账号<a id="more"></a>
+<h3 id="1-电脑"><a href="#1-电脑" class="headerlink" title="1.电脑"></a>1.电脑</h3>无论是<code>Windows</code>、<code>Mac</code>、<code>Linux</code>都可以制作Hexo博客。本文主要以<code>Windows</code>为主要说明<h3 id="2-Node-js"><a href="#2-Node-js" class="headerlink" title="2.Node.js"></a>2.Node.js</h3><blockquote>
+<p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript Runtime</p>
+</blockquote>
+</li>
+</ul>
+<p>如果有兴趣,可以去<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a>了解<br>现在，我们要下载node.js,这里我链接到了Node.js的官网<br>下载,安装之后,打开<code>cmd</code>,输入  </p>
+<pre><code>npm -v</code></pre><p>如果显示了版本号,则证明你安装成功了   </p>
+<h3 id="3-Git"><a href="#3-Git" class="headerlink" title="3.Git"></a>3.Git</h3><p>接下来，我们要来获取Git</p>
+<blockquote>
+<p>Git是一个开源的分布式版本控制系统  </p>
+</blockquote>
+<p>同样,我也链接了Git的官网的下载链接,<a href="https://git-scm.com/download" target="_blank" rel="noopener">点击下载</a>,然后正常安装即可。<br>再次打开<code>cmd</code>,输入</p>
+<pre><code>git --version </code></pre><p>同样,输出了版本号便成功了。</p>
+<h3 id="3-Hexo"><a href="#3-Hexo" class="headerlink" title="3.Hexo"></a>3.Hexo</h3><p>同样,官网在这——&gt;<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a><br>这次,安装的方式有些不同<br>首先,我们打开<code>cmd</code><br>输入以下命令:</p>
+<pre><code>npm install hexo-cli -g
+npm install hexo-deployer-git --save
+hexo -v</code></pre><p>如果出现了版本号,就说明安装成功了</p>
+<h3 id="4-Github账号"><a href="#4-Github账号" class="headerlink" title="4.Github账号"></a>4.Github账号</h3><p>接下来,我们前往<a href="https://github.com/" target="_blank" rel="noopener">Github</a>注册账号<br><img src="/img/how_to_setup_your_blog/Github_Sign_up.png" srcset="/img/loading.gif" alt="Github注册"><br>一进入官网,首页便是注册,完成注册后,我们要创建仓库<br><img src="/img/how_to_setup_your_blog/Github_new_project.png" srcset="/img/loading.gif" alt="Github仓库"><br><img src="/img/how_to_setup_your_blog/Github_new_project_set.png" srcset="/img/loading.gif" alt="Github仓库"><br><img src="/img/how_to_setup_your_blog/Github_new_project_record.png" srcset="/img/loading.gif" alt="Github仓库"><br>到此,准备工作就完成了。</p>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><h3 id="基础搭建"><a href="#基础搭建" class="headerlink" title="基础搭建"></a>基础搭建</h3><p>首先,在你的电脑中,选一个你喜欢的位置,创建一个文件夹,进入文件夹,右键,选择<code>Git Bash Here</code><br><img src="/img/how_to_setup_your_blog/Git_Bash.png" srcset="/img/loading.gif" alt="Git Bash Here"><br>之后输入:</p>
+<pre><code>hexo init</code></pre><p>接下来,Hexo会自动下载一些必要文件<br>下载完成后,基本的Hexo Blog系统便搭建完成了<br>输入<code>hexo s</code>来查看效果。</p>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ol>
+<li><code>Hexo g</code> 渲染网页</li>
+<li><code>Hexo clear</code>清楚渲染网页</li>
+<li><code>Hexo d</code>部署网页</li>
+<li><code>Hexo s</code>启动本地服务器</li>
+</ol>
+<h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>打开<code>\_config.yml</code><br>这里面都是Hexo的基本设置<br>注意:冒号后面要加空格</p>
+<h4 id="基本网站信息设置"><a href="#基本网站信息设置" class="headerlink" title="基本网站信息设置"></a>基本网站信息设置</h4><pre><code>title:  #网站标题
+subtitle: &#39;&#39; #网站副标题
+description: &#39;&#39; #网站描述
+keywords:  #网站关键字(多个关键字以&#39;,&#39;分割)
+author:  #作者名称
+language: #语言
+timezone: &#39;&#39; #时区</code></pre><h4 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h4><pre><code>theme:  #输入themes文件夹的主题名</code></pre><h2 id="美化-优化"><a href="#美化-优化" class="headerlink" title="美化/优化"></a>美化/优化</h2><p>现在的Hexo已经基本可用<br>但是,原版主题并不是很美观,所以,我们要美化一下<br>在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo主题仓库</a>中有许许多多的主题,你可以选择自己喜欢的,并根据主题官方的文档进行配置。<br>这里我主要以<a href="https://hexo.fluid-dev.com/docs/" target="_blank" rel="noopener">Fluid</a>进行讲解  </p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>在官网中下载,解压到<code>\themes\</code>文件夹中,将解压的文件名改为<code>fluid</code></p>
+<h3 id="启用"><a href="#启用" class="headerlink" title="启用"></a>启用</h3><p>打开<code>\_config.yml</code><br>将<code>theme:</code>后内容改为<code>fluid</code><br>再使用<code>hexo s</code>即可查看效果</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>启动了主题之后,我们要进行主题的基本配置<br>详细的配置可以参照<a href="https://hexo.fluid-dev.com/docs/guide/" target="_blank" rel="noopener">官方配置文档</a>,这里只说一些特殊配置</p>
+<h4 id="Blog-config-yml"><a href="#Blog-config-yml" class="headerlink" title="Blog config.yml"></a>Blog config.yml</h4><pre><code class="yaml">highlight:
+  enable: false  # 关闭默认的代码高亮
+
+language: zh-CN  # 指定语言，可不改</code></pre>
+<h4 id="主题-Config-yml"><a href="#主题-Config-yml" class="headerlink" title="主题 Config.yml"></a>主题 Config.yml</h4><pre><code class="yaml">mouse_click:  # 鼠标点击动效
+    enable: true
+    style: love # 目前设置两个值：values（价值观词汇） | love（爱心）
+
+color:  # 主体颜色配置，可以从这里寻找启发： https://www.webdesignrankings.com/resources/lolcolors/
+  body_bg_color: &quot;#eee&quot;
+  navbar_bg_color: &quot;#9DC8C8&quot;
+  navbar_text_color: &quot;white&quot;
+  text_color: &quot;#3c4858&quot;
+  link_color: &quot;black&quot;
+  link_hover_color: &quot;#58C9B9&quot;
+  board_color: &quot;#FFF&quot;
+
+lazyload: #懒加载,加快网页加载速度
+  enable: true
+  onlypost: false
+
+index:
+  banner_img: /img/default.jpg  # 首页 Banner 头图，以下相同
+  banner_img_height: 100  # 头图高度，屏幕百分比，available: 0 - 100
+
+about:  # 以下仅为页面顶部的基本信息，更多内容请在 ./pages/about.md 中编辑，支持 markdown 和 HTML
+  md_path: ../../source/about.md  # 关于页文档的相对路径，可以按相对文档设置主题之外的路径，从而避免更新冲突
+  banner_img: /img/default.jpg
+  banner_img_height: 80  # available: 0 - 100
+  avatar: /img/avatar.png # 头像
+  name: 
+  introduce: info / info / info # 支持 HTML
+  icons: # 更多图标可从 https://fontawesome.com/v5.10.0/icons?d=gallery 查找，并以 &quot;图标名: url&quot; 的格式添加在下方
+    &quot;fab fa-youtube&quot;: https://space.bilibili.com/10242041
+    &quot;fab fa-github&quot;: https://github.com/Cynicink
+    &quot;fas fa-envelope&quot;:  #使用&#39;mailto:你的邮箱&#39;来调用邮箱发送邮件
+    &quot;fab fa-weixin&quot;:  # 微信图标，这个是特殊图标，点击不会跳转而是悬浮二维码，所以链接需要对应二维码图片地址</code></pre>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>在基本美化完成之后,我们还可以在Hexo的功能上进行一些补充</p>
+<h4 id="1-评论"><a href="#1-评论" class="headerlink" title="1.评论"></a>1.评论</h4><p>评论功能是博客的基本功能,但由于Hexo生成的是静态网页,并不自带评论功能,这时,我们就要引入第三方的评论系统。<br>这里主要讲解<a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a></p>
+<h5 id="获取APP-ID-和-APP-Key"><a href="#获取APP-ID-和-APP-Key" class="headerlink" title="获取APP ID 和 APP Key"></a>获取APP ID 和 APP Key</h5><p>首先,我们要<a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">登录</a>或<a href="https://leancloud.cn/dashboard/login.html#/signup" target="_blank" rel="noopener">注册</a><code>LeanCloud</code>,进入<a href="https://leancloud.cn/dashboard/applist.html#/apps" target="_blank" rel="noopener">控制台</a>后点击<a href="https://leancloud.cn/dashboard/applist.html#/newapp" target="_blank" rel="noopener">创建应用</a>:<br><img src="https://i.loli.net/2019/06/21/5d0c995c86fac81746.jpg" srcset="/img/loading.gif" alt=""><br>应用创建后,进入应用,依次点击<code>设置</code>&gt;<code>应用Key</code>,然后就可以看到<code>APP ID</code>和<code>APP Key</code>了:<br>再进入<code>安全中心</code>,设置<code>安全域名</code>。</p>
+<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>之后，来到<strong>Fluid主题</strong>的<code>_config.yml</code></p>
+<pre><code>comments:  # 评论
+    enable: true  # 开启评论
+    type: valine  # 指定使用的评论模块  available: disqus | valine | gitalk | utterances | changyan | livere
+
+valine:
+    appid:  # 你的APP ID
+    appkey:  # 你的APP Key
+    notify: false # 邮件提醒, 详情: https://github.com/xCss/Valine/wiki
+    verify: true # 验证码
+    placeholder: 有什么想说的? # 评论框占位符
+    avatar: identicon # gravatar style https://valine.js.org/avatar.html
+    pageSize: 10 # 分页大小</code></pre><p>这样,评论系统就完成了</p>
+<h4 id="2-置顶"><a href="#2-置顶" class="headerlink" title="2.置顶"></a>2.置顶</h4><p>置顶系统也是博客系统常见的功能,然而Hexo也并不自带这个功能</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>我们使用<a href="https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md" target="_blank" rel="noopener">hexo-generator-index2</a><br>使用以下命令安装:</p>
+<pre><code>npm install hexo-generator-index2 --save
+npm uninstall hexo-generator-index --save</code></pre><p>之后,在<strong>博客</strong>的<code>_config.yml</code>中加入:</p>
+<pre><code>index2_include_index: true 
+
+index2_generator:
+  per_page: 10 每页文章数量
+  order_by:  #排序依据
+    -top #此处添加top需在文章的&#39;Front-matter&#39;内加入top值
+    -date
+  exclude:
+    -category psw #不包含psw分类下的文章</code></pre><p>由于每次新建文章时都要设定top变量十分麻烦,所以我们改变一下文章模板<br>打开<code>\scaffolds\post.md</code></p>
+<pre><code>---
+title: {{ title }}
+date: {{ date }}
+tags:
+categories: 
+top: 1 #加入这一条,默认top为1,数字越高越靠前
+---
+</code></pre><p>这样,置顶功能基本完成了,但是,没有任何标识会显得不太美观,所以我们来稍微修改一下主题文件<br>打开<code>\theme\fluid\layout\indes.ejs</code></p>
+<pre><code>        &lt;p class=&quot;h4 index-header&quot;&gt;
+          &lt;% if (post.top &gt;= 2) { %&gt;       //在此处插入
+            &lt;i class=&quot;fas fa-map-pin&quot;&gt;&lt;/i&gt;
+          &lt;% } %&gt;
+          &lt;%= post.title %&gt;
+        &lt;/p&gt;            </code></pre><p>之后,在置顶的文章标题前就会有一个小图钉。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>在本地完成了设置、美化。终于,我们可以像互联网公开博客了<br>这里，我们使用<code>Github Page</code>来托管我们的静态博客。<br>首先安装git插件:</p>
+<pre><code>npm install hexo-deployer-git --save</code></pre><p>打开<strong>主题</strong>的<code>_config.yml</code>:</p>
+<pre><code>deploy:
+  type: &#39;git&#39;
+  repository:
+      github:  #填入之前在Github中记下的网址
+  branch: master </code></pre><p>使用<code>hexo d</code>进行部署<br>部署过程中会要求你登陆Github,按照注册Github的信息填入即可<br>部署完成后,登录<code>你的Github用户名.github.io</code>查看你的网页<br>到此,基本的Blog网站就搭建好了</p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>这篇文章到此就结束了,之后我还会更新关于CDN加速、Markdown的写法等相关内容，有空回来看看。</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+              <span>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/%E7%A7%91%E6%8A%80">科技</a>
+                  &nbsp;
+                
+              </span>&nbsp;&nbsp;
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/%E7%A7%91%E6%8A%80">科技</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B">教程</a>
+                
+                  <a class="hover-with-bg" href="/tags/Hexo">Hexo</a>
+                
+                  <a class="hover-with-bg" href="/tags/Markdown">Markdown</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="/img/money.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:475px; height:475px;">
+    </div>
+  </div>
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <div id="vcomments" style="width: 90%; margin: 0 auto;"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script>
+    var notify = 'false' === true;
+    var verify = 'false' === true;
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "H910cwQYKu3pFfUrNTO7GBQL-gzGzoHsz",
+        app_key: "kO2v9YmER5fRs7ojvFg9O7EX",
+        placeholder: "有什么想说的?",
+        avatar: "identicon",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
+  
+  <br>
+
+
+
+    
+
+
+    <!-- cnzz Analytics icon -->
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" ></script>
+<script src="ttps://cdn.bootcss.com/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.bootcss.com/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+    <script src="https://cdn.bootcss.com/tocbot/4.10.0/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+
+  <script src="https://cdn.bootcss.com/smooth-scroll/16.1.0/SmoothScroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  <!-- cnzz Analytics -->
+  
+
+
+
+  <script src="https://cdn.bootcss.com/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  ');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.bootcss.com/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "如何建立你的Blog&nbsp;",
+      ],
+      cursorChar: "<",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.bootcss.com/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "left",
+      visible: "touch",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+  
+    <script>
+      !function (e, t, a) {
+        function r() {
+          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+          requestAnimationFrame(r)
+        }
+
+        function n() {
+          var t = "function" == typeof e.onclick && e.onclick;
+          e.onclick = function (e) {
+            t && t(), o(e)
+          }
+        }
+
+        function o(e) {
+          var a = t.createElement("div");
+          a.className = "heart", s.push({
+            el: a,
+            x: e.clientX - 5,
+            y: e.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: c()
+          }), t.body.appendChild(a)
+        }
+
+        function i(e) {
+          var a = t.createElement("style");
+          a.type = "text/css";
+          try {
+            a.appendChild(t.createTextNode(e))
+          } catch (t) {
+            a.styleSheet.cssText = e
+          }
+          t.getElementsByTagName("head")[0].appendChild(a)
+        }
+
+        function c() {
+          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+        }
+
+        var s = [];
+        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+          setTimeout(e, 1e3 / 60)
+        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
+      }(window, document);
+    </script>
+  
+
+
+
+
+
+
+
+
+</body>
+</html>
