@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="Cynic.Ink">
   <meta name="keywords" content="ACGN,科技,学习,日语">
-  <title>Cynic &#39;s Blog</title>
+  <title>自定域名和CDN加速 ~ Cynic &#39;s Blog</title>
 
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.12.1/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.min.css"  >
@@ -39,7 +39,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -106,8 +106,8 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.jpg')no-repeat center center;
+    <div class="view intro-2" id="background" false
+         style="background: url('https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1218302146,3631028436&fm=26&gp=0.jpg')no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask rgba-black-light flex-center">
@@ -117,12 +117,47 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  2020 三月 3日，星期二
+                </p>
+                <p class="mt-3">
+                  <i class="fas fa-angle-double-up" aria-hidden="true"></i>&nbsp;
+                  2020 三月 3日，星期二
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    525 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
           
         </div>
       </div>
@@ -131,178 +166,123 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <blockquote>
+<p>本片文章是利用Cloudflare进行CDN加速教程</p>
+</blockquote>
+<p><a href="/2020/03/02/how_to_setup_your_blog/">之前</a>我们介绍了利用<code>Hexo</code>搭建托管于<code>Github</code>的博客,但是Github的服务器在中国的链接一直不怎么好,所以我们要利用CDN进行加速</p>
+<a id="more"></a>
+<h2 id="自定域名"><a href="#自定域名" class="headerlink" title="自定域名"></a>自定域名</h2><h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p>在进行CDN加速之前,我们要”获取”自己的域名,至于是去购买,还是想办法获取免费的域名,就请自行查找教程<br>这里假定已拥有了域名<br>我们要在<code>Github</code>中进行配置:<br><img src="/img/custom_domain_and_CDN/Github_setting.png" srcset="/img/loading.gif" alt=""><br><img src="/img/custom_domain_and_CDN/Github_domain.png" srcset="/img/loading.gif" alt=""><br><strong>这时,就会出现问题!</strong><br>每次使用了<code>hexo d</code>之后,GitHub的域名都会恢复成默认域名<br>这时,我们在<code>\source\</code>目录下创建<code>CNAME</code>文件,在里面填入自己的域名即可</p>
+<h3 id="域名提供商"><a href="#域名提供商" class="headerlink" title="域名提供商"></a>域名提供商</h3><p>在<code>Github</code>设置完成之后,在域名提供商这边也要进行设置<br>这里以<code>腾讯云</code>为例<br><img src="/img/custom_domain_and_CDN/Dnspod_Add.png" srcset="/img/loading.gif" alt=""><br><img src="/img/custom_domain_and_CDN/Dnspod_Add_Setting.png" srcset="/img/loading.gif" alt=""><br>填写完成后,域名解析就完成了,等待一会,就可以用你自己的域名登录网站了</p>
+<h2 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h2><p>我们使用<a href="https://www.cloudflare.com/" target="_blank" rel="noopener">Cloudflare</a>进行CDN加速</p>
+<blockquote>
+<p>Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务。通过基于反向代理的内容分发网络(CDN, Content Delivery Network)、任播(Anycast)技术 、基于nginx+lua架构的Web应用防火墙(WAF, Web Application Firewall)   及分布式域名解析服务(Distributed Domain Name Server)等技术，Cloudflare可以帮助受保护站点抵御包括分布式拒绝服务攻击(DDoS, Distributed Denial of Service)在内的大多数网络攻击，确保该网站长期在线，同时提升网站的性能、访问速度以改善访客体验</p>
+</blockquote>
+<p>登录<code>Cloudflare</code>,添加你的域名:<br><img src="/img/custom_domain_and_CDN/cloudflare_add_1.png" srcset="/img/loading.gif" alt=""><br>之后<code>Cloudflare</code>会检测域名的DNS,点击继续.<br><img src="https://ask.qcloudimg.com/http-save/yehe-1000017/7d44jo3qff.jpeg" srcset="/img/loading.gif" alt=""><br>之后会要求我们修改域名的NS,回到域名提供商,修改域名的DNS服务器:<br><img src="https://ask.qcloudimg.com/http-save/yehe-1000017/hk1fvrrn5h.jpeg" srcset="/img/loading.gif" alt=""><br><img src="/img/custom_domain_and_CDN/Dnspod_DNS_change.png" srcset="/img/loading.gif" alt=""><br>之后需要等待生效,生效后CDN加速就成功开启了</p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>本片文章到此就结束了,希望这篇文站对正在建站的你有所帮助,我们下次再见。</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+              <span>
+                <i class="iconfont icon-inbox"></i>
                 
-
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-	  <a href="/2020/02/28/hello_world/">
-        <p class="h4 index-header">
-          
-            <i class="fas fa-map-pin"></i>
-          
-          Hello World
-        </p>			
-      </a>
-
-      <a href="/2020/02/28/hello_world/">
-        
-        
-          
-          
-        
-        <div class="index-excerpt" style="max-height: none;">
-          <div class="index-text mb-1">Hello World以下是我所学过的编程语言写成的Hello World...</div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-28&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/03/03/custom-domain-and-CDN/" target="_self">
-          <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2258126160,3071030189&fm=26&gp=0.jpg" srcset="/img/loading.gif" alt="自定域名和CDN加速" class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-	  <a href="/2020/03/03/custom-domain-and-CDN/">
-        <p class="h4 index-header">
-          
-          自定域名和CDN加速
-        </p>			
-      </a>
-
-      <a href="/2020/03/03/custom-domain-and-CDN/">
-        
-        
-          
-          
-        
-        <div class="index-excerpt" style="max-height: none;">
-          <div class="index-text mb-1">
-本片文章是利用Cloudflare进行CDN加速教程
-
-之前我们介绍了利用Hexo搭建托管于Github的博客,但是Github的服务器在中国的链接一直不怎么好,所以我们要利用CDN进行加速...</div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-03&nbsp;&nbsp;
-        
-        
-          <i class="iconfont icon-inbox"></i>
-          
-            <a href="/categories/%E7%A7%91%E6%8A%80">科技</a>&nbsp;
-          &nbsp;
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E7%A7%91%E6%8A%80">科技</a>&nbsp;
-          
-            <a href="/tags/%E6%95%99%E7%A8%8B">教程</a>&nbsp;
-          
-            <a href="/tags/Hexo">Hexo</a>&nbsp;
-          
-            <a href="/tags/Markdown">Markdown</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/03/02/how_to_setup_your_blog/" target="_self">
-          <img src="/img/how_to_setup_your_blog/index.jpg" srcset="/img/loading.gif" alt="如何建立你的Blog" class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-	  <a href="/2020/03/02/how_to_setup_your_blog/">
-        <p class="h4 index-header">
-          
-          如何建立你的Blog
-        </p>			
-      </a>
-
-      <a href="/2020/03/02/how_to_setup_your_blog/">
-        
-        
-          
-          
-        
-        <div class="index-excerpt" style="max-height: none;">
-          <div class="index-text mb-1">
-本教程是基于Hexo,使用Fluid主题,托管于Github的博客教程
-
-起步在一切开始之前,你需要:  
-
-电脑 (或Android手机) 
-Node.js
-git
-Hexo  
-Github账号...</div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-03-02&nbsp;&nbsp;
-        
-        
-          <i class="iconfont icon-inbox"></i>
-          
-            <a href="/categories/%E7%A7%91%E6%8A%80">科技</a>&nbsp;
-          &nbsp;
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E7%A7%91%E6%8A%80">科技</a>&nbsp;
-          
-            <a href="/tags/%E6%95%99%E7%A8%8B">教程</a>&nbsp;
-          
-            <a href="/tags/Hexo">Hexo</a>&nbsp;
-          
-            <a href="/tags/Markdown">Markdown</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-              </div>
-            </div>
+                  <a class="hover-with-bg" href="/categories/%E7%A7%91%E6%8A%80">科技</a>
+                  &nbsp;
+                
+              </span>&nbsp;&nbsp;
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/%E7%A7%91%E6%8A%80">科技</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B">教程</a>
+                
+                  <a class="hover-with-bg" href="/tags/Hexo">Hexo</a>
+                
+                  <a class="hover-with-bg" href="/tags/Markdown">Markdown</a>
+                
+              </span>
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="/img/money.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:475px; height:475px;">
+    </div>
+  </div>
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <div id="vcomments" style="width: 90%; margin: 0 auto;"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script>
+    var notify = 'false' === true;
+    var verify = 'false' === true;
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "H910cwQYKu3pFfUrNTO7GBQL-gzGzoHsz",
+        app_key: "kO2v9YmER5fRs7ojvFg9O7EX",
+        placeholder: "有什么想说的?",
+        avatar: "identicon",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -381,6 +361,11 @@ Github账号...</div>
 
 
 
+  
+    <script src="https://cdn.bootcss.com/tocbot/4.10.0/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
 
   <script src="https://cdn.bootcss.com/smooth-scroll/16.1.0/SmoothScroll.min.js" ></script>
@@ -421,7 +406,7 @@ Github账号...</div>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Life Will Change&nbsp;",
+        "自定域名和CDN加速&nbsp;",
       ],
       cursorChar: "<",
       typeSpeed: 70,

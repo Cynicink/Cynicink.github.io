@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>自定域名和CDN加速</title>
+    <link href="/2020/03/03/custom-domain-and-CDN/"/>
+    <url>/2020/03/03/custom-domain-and-CDN/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>本片文章是利用Cloudflare进行CDN加速教程</p></blockquote><p><a href="/2020/03/02/how_to_setup_your_blog/">之前</a>我们介绍了利用<code>Hexo</code>搭建托管于<code>Github</code>的博客,但是Github的服务器在中国的链接一直不怎么好,所以我们要利用CDN进行加速</p><a id="more"></a><h2 id="自定域名"><a href="#自定域名" class="headerlink" title="自定域名"></a>自定域名</h2><h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p>在进行CDN加速之前,我们要”获取”自己的域名,至于是去购买,还是想办法获取免费的域名,就请自行查找教程<br>这里假定已拥有了域名<br>我们要在<code>Github</code>中进行配置:<br><img src="/img/custom_domain_and_CDN/Github_setting.png" srcset="/img/loading.gif" alt=""><br><img src="/img/custom_domain_and_CDN/Github_domain.png" srcset="/img/loading.gif" alt=""><br><strong>这时,就会出现问题!</strong><br>每次使用了<code>hexo d</code>之后,GitHub的域名都会恢复成默认域名<br>这时,我们在<code>\source\</code>目录下创建<code>CNAME</code>文件,在里面填入自己的域名即可</p><h3 id="域名提供商"><a href="#域名提供商" class="headerlink" title="域名提供商"></a>域名提供商</h3><p>在<code>Github</code>设置完成之后,在域名提供商这边也要进行设置<br>这里以<code>腾讯云</code>为例<br><img src="/img/custom_domain_and_CDN/Dnspod_Add.png" srcset="/img/loading.gif" alt=""><br><img src="/img/custom_domain_and_CDN/Dnspod_Add_Setting.png" srcset="/img/loading.gif" alt=""><br>填写完成后,域名解析就完成了,等待一会,就可以用你自己的域名登录网站了</p><h2 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h2><p>我们使用<a href="https://www.cloudflare.com/" target="_blank" rel="noopener">Cloudflare</a>进行CDN加速</p><blockquote><p>Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务。通过基于反向代理的内容分发网络(CDN, Content Delivery Network)、任播(Anycast)技术 、基于nginx+lua架构的Web应用防火墙(WAF, Web Application Firewall)   及分布式域名解析服务(Distributed Domain Name Server)等技术，Cloudflare可以帮助受保护站点抵御包括分布式拒绝服务攻击(DDoS, Distributed Denial of Service)在内的大多数网络攻击，确保该网站长期在线，同时提升网站的性能、访问速度以改善访客体验</p></blockquote><p>登录<code>Cloudflare</code>,添加你的域名:<br><img src="/img/custom_domain_and_CDN/cloudflare_add_1.png" srcset="/img/loading.gif" alt=""><br>之后<code>Cloudflare</code>会检测域名的DNS,点击继续.<br><img src="https://ask.qcloudimg.com/http-save/yehe-1000017/7d44jo3qff.jpeg" srcset="/img/loading.gif" alt=""><br>之后会要求我们修改域名的NS,回到域名提供商,修改域名的DNS服务器:<br><img src="https://ask.qcloudimg.com/http-save/yehe-1000017/hk1fvrrn5h.jpeg" srcset="/img/loading.gif" alt=""><br><img src="/img/custom_domain_and_CDN/Dnspod_DNS_change.png" srcset="/img/loading.gif" alt=""><br>之后需要等待生效,生效后CDN加速就成功开启了</p><h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>本片文章到此就结束了,希望这篇文站对正在建站的你有所帮助,我们下次再见。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>科技</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>科技</tag>
+      
+      <tag>教程</tag>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Markdown</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何建立你的Blog</title>
     <link href="/2020/03/02/how_to_setup_your_blog/"/>
     <url>/2020/03/02/how_to_setup_your_blog/</url>
