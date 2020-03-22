@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Hello Kotlin</title>
+    <link href="/2020/03/22/Hello-Kotlin/"/>
+    <url>/2020/03/22/Hello-Kotlin/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文大致介绍了我学习Kotlin的一些经验</p></blockquote><h2 id="Hello-Kotlin"><a href="#Hello-Kotlin" class="headerlink" title="Hello Kotlin!"></a>Hello Kotlin!</h2><h3 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h3><p>我第一次了解到<code>Kotlin</code>的时候,是当初想学习Android开发时,在网上搜索有关<code>Android</code>的时候见到的.</p><p>当时,<code>Google</code>把他”钦定”为<code>Android</code>开发第一语言,就感觉这门语言十分厉害,在稍微了解之后,发现<code>Kotlin</code>似乎可以用于很多反面,与Java混编的Kotlin/JVM,有面向Web端的Kotli/JS,还有能与C互通的Kotlin/Native,看着如此强大的Kotlin,我开始学习了.</p><pre><code class="kotlin">fun main(){    println(&quot;Hello World&quot;)}</code></pre><p>这便是我的第一个<code>Kotlin</code>程序.</p><h3 id="分别"><a href="#分别" class="headerlink" title="分别"></a>分别</h3><p>之后,我参加了学校的NOIP,我们学校比赛用的语言还是<code>Pascal</code>,回想起整个考场只有我们用”小蓝屏”,十分的尴尬…</p><p>之后的大部分时间,都在学习<code>Pascal</code>,<code>Kotlin</code>便被我抛入了”冷宫”</p><h3 id="再次相遇"><a href="#再次相遇" class="headerlink" title="再次相遇"></a>再次相遇</h3><p>托福于这次疫情,在家闲的慌的我,回想起<code>Kotlin</code>这个东西,于是,借着这个超长的假期我又深入学习了以下it</p><h2 id="经验分享"><a href="#经验分享" class="headerlink" title="经验分享"></a>经验分享</h2><p>学习一门新知识,必定是十分幸苦的过程,如果有好的领路人,必能事半功倍,我学习<code>Kotlin</code>,是借助了BiliBili的<a href="https://www.bilibili.com/video/av32291420" target="_blank" rel="noopener">视频</a>,这个视频涵盖了<code>Kotlin</code>基础,<code>Kotlin</code>的<code>Android</code>等大量内容,大家也可以用这个视频来学习,我在这分享一下我学习中的经验</p><h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><p>这篇视频中,关于<code>Gradle</code>设置有些问题,这里给出正确设置</p><pre><code class="kotlin">plugins {    application    kotlin(&quot;jvm&quot;) version &quot;1.3.70&quot; //这里视屏中没有加 version 参数,一定要加才不会报错}</code></pre><h3 id="Tornadofx"><a href="#Tornadofx" class="headerlink" title="Tornadofx"></a>Tornadofx</h3><p><code>Tornadofx</code>是基于<code>Javafx</code>的<code>Kotlin</code>可视化库,在使用这个库时需要导入<code>Javafx</code>,但在Java11之后,Javafx与JDK分开了,所以我们要用Gradle来导入,但我在网上并没有找到相关的教程,所以在这里说一下 </p><pre><code class="kotlin">plugins {    id(&quot;org.openjfx.javafxplugin&quot;) version &quot;0.0.8&quot; //加载Open JavaFx的插件}javafx {    modules(&quot;javafx.controls&quot;, &quot;javafx.fxml&quot;)//对插件进行设置,映入controls和fxml模块}</code></pre><h3 id="Gradle加速"><a href="#Gradle加速" class="headerlink" title="Gradle加速"></a>Gradle加速</h3><p>我在加载Gradle时,速度不知为何,十分慢.为了帮助需要加速的同学加快速度,这里介绍下如何加速</p><p>在<code>C:\user\${你的用户名}\.gradle</code>目录下新建<code>init.gradle</code>,加入以下内容</p><pre><code class="groovy">allprojects{    repositories {        def ALIYUN_REPOSITORY_URL = &#39;http://maven.aliyun.com/nexus/content/groups/public&#39;        def ALIYUN_JCENTER_URL = &#39;http://maven.aliyun.com/nexus/content/repositories/jcenter&#39;        all { ArtifactRepository repo -&gt;            if(repo instanceof MavenArtifactRepository){                def url = repo.url.toString()                if (url.startsWith(&#39;https://repo1.maven.org/maven2&#39;)) {                    project.logger.lifecycle &quot;Repository ${repo.url} replaced by $ALIYUN_REPOSITORY_URL.&quot;                    remove repo                }                if (url.startsWith(&#39;https://jcenter.bintray.com/&#39;)) {                    project.logger.lifecycle &quot;Repository ${repo.url} replaced by $ALIYUN_JCENTER_URL.&quot;                    remove repo                }            }        }        maven {                url ALIYUN_REPOSITORY_URL            url ALIYUN_JCENTER_URL        }    }}</code></pre><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>我也只是刚刚开始学习<code>Kotlin</code>,对编程了解还不是很深,但希望我的文章能帮助到正在学习的你</p><p><strong>加油</strong>!</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>科技</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>科技</tag>
+      
+      <tag>Kotlin</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>自定域名和CDN加速</title>
     <link href="/2020/03/03/custom-domain-and-CDN/"/>
     <url>/2020/03/03/custom-domain-and-CDN/</url>
